@@ -1,0 +1,9 @@
+body {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  border-bottom: #57a695 3px solid;
+}
