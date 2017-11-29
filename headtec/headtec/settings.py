@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'contato',
     'empresa',
     'servicos',
+    'login',
+    'controle',
     'app',
     # Add your apps here to enable them
     'django.contrib.admin',
@@ -126,5 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = '/controle/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))

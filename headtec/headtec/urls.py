@@ -20,6 +20,8 @@ urlpatterns = [
     url(r'^contato/', include('contato.urls')),
     url(r'^empresa/', include('empresa.urls')),
     url(r'^servicos/', include('servicos.urls')),
+    url(r'^login/', include('login.urls')),
+    url(r'^controle/', include('controle.urls')),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
     url(r'^login/$',
