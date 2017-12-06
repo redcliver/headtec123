@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'servicos',
     'login',
     'controle',
+    'movimentacoes',
+    'relatorios',
     'app',
     # Add your apps here to enable them
     'django.contrib.admin',

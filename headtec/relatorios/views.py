@@ -4,8 +4,8 @@ from django.contrib.auth import authenticate
 from django.shortcuts import render
 
 # Create your views here.
-def controle(request):
+def relatorios(request):
     if request.user.is_authenticated():
-        return render(request, 'controle.html', {'title':'Controle'})
+        return render(request, 'relatorios.html', {'title':'Relatorios'})
     else:
         return render(request, 'erro.html', {'title':'Erro'})

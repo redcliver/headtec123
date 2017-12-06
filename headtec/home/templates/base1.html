@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt">
   <head>
     {% block head %}
@@ -76,8 +76,11 @@
             transition: box-shadow .5s ease;
         }
         input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
-
         
+        .sombra h1{
+          color: #dfe3fa;
+          text-shadow: 2px 2px 2px #5E5E5E;
+        }
       </style>
       {% endblock %}
 </head>
@@ -86,7 +89,7 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
-                  <a class="navbar-brand" href="/"><img src="../../static/app/img/logo.png" alt="HeadTec logo"/></a>
+                  <a class="navbar-brand" href="/controle"><img src="../../static/app/img/logo.png" alt="HeadTec logo"/></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -94,26 +97,23 @@
                   <div class="collapse navbar-collapse" id="navbarsExample07">
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item active">
-                        <a class="nav-link" href="/">Início <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/empresa">Empresa</a>
+                        <a class="nav-link" href="/controle">Início <span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviços</a>
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Movimentações</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown07">
-                          <a class="dropdown-item" href="/servicos">Desenvolvimento de sistemas</a>
-                          <a class="dropdown-item" href="#">Manutenção em computadores</a>
-                          <a class="dropdown-item" href="#">Criação de website</a>
+                          <a class="dropdown-item" href="/movimentacoes/entradas">Entradas</a>
+                          <a class="dropdown-item" href="/movimentacoes/saidas">Saídas</a>
+                          <a class="dropdown-item" href="/movimentacoes/contas">Contas a pagar</a>
                         </div>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/contato">Contato</a>
+                        <a class="nav-link" href="/relatorios">Relatórios</a>
                       </li>
                     </ul>
                     <ul class="navbar-nav float-right">
                       <li class="nav-item">
-                        <a class="nav-link form-inline my-2 my-md-0" href="/login">Login</a>
+                        <a class="nav-link form-inline my-2 my-md-0" href="/logout">Sair</a>
                       </li>
                     </ul>
                   </div>
@@ -121,22 +121,11 @@
               </nav>
         </header>
         <main role="main">
-          {% block main %}
-
-          
-                    <!-- Marketing messaging and featurettes
-      ================================================== -->
-      <!-- Wrap the rest of the page in another container to center all the content. -->
-
-      <div class="container marketing">
+            {% block main %}
+                <div class="container marketing">
                     <!-- START THE FEATURETTES -->
-                    
-                    
-                  </div><!-- /.container -->
-            
-            
-                  
-                  {% endblock %}
+                </div><!-- /.container -->
+            {% endblock %}
                   <!-- FOOTER -->
                   
                   <footer class="container">
