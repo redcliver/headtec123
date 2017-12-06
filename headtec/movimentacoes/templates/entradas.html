@@ -6,19 +6,21 @@
             <h1>Entradas</h1>
         </div>
         <hr class="my-4">
-        <p class="lead">Valor da entrada:</p>
-        <form class="form-inblock">
-              <label class="sr-only" for="valor">Valor da entrada:</label>
-              <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+        <p class="lead sombra">Valor da entrada :</p>
+        <form method="POST" class="form-inblock">
+                {% csrf_token %}
+              <label class="sr-only" for="valor">Valor da entrada :</label>
+              <div class="input-group col-md-2">
                 <div class="input-group-addon">R$</div>
-                <input required type="text" class="form-control" id="Valor" placeholder="0,00"><br/>
-                <br>
-                
+                <input required name="valor" type="text" class="form-control" id="Valor" placeholder="0,00"><br/>
               </div>
               <br/>
-              <p class="lead">Motivo da entrada:</p>
-              <input type="text" class="form-control" id="motivo" placeholder="Digite aqui...">
-              <button type="button" class="btn btn-primary my-2 my-sm-0">Registrar</button>
+              <p class="lead sombra">Descrição da entrada :</p>
+              <div class="input-group col-md-8">
+                <input required name="desc" type="text" class="form-control" id="motivo" placeholder="Digite aqui...">
+              </div>
+              <br/>
+              <button type="submit" class="btn btn-primary my-2 my-sm-0">Registrar</button>
         </form>
     </div>
 </div>

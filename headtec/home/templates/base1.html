@@ -56,6 +56,8 @@
         }
         .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
+        .login-dif h1 { color: rgb(87, 166, 149); text-shadow: 0 0 10px rgba(61, 119, 107,0.3); letter-spacing:1px; text-align:center; }
+
         input { 
             width: 100%; 
             margin-bottom: 10px; 
@@ -77,49 +79,57 @@
         }
         input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
         
+        .sombra {
+          color: #dfe3fa;
+          text-shadow: 1px 1px 1px rgb(87, 87, 87);
+        }
+
         .sombra h1{
           color: #dfe3fa;
           text-shadow: 2px 2px 2px #5E5E5E;
         }
+
       </style>
       {% endblock %}
 </head>
+<header>
+    {% block header %}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/controle"><img src="../../static/app/img/logo.png" alt="HeadTec logo"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/controle">Início <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Movimentações</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown07">
+                <a class="dropdown-item" href="/movimentacoes/entradas">Entradas</a>
+                <a class="dropdown-item" href="/movimentacoes/saidas">Saídas</a>
+                <a class="dropdown-item" href="/movimentacoes/contas">Contas a pagar</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/relatorios">Relatórios</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav float-right">
+            <li class="nav-item">
+              <a class="nav-link form-inline my-2 my-md-0" href="/logout">Sair</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% endblock %}
+</header>
     <body>
         {% block body %}
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container">
-                  <a class="navbar-brand" href="/controle"><img src="../../static/app/img/logo.png" alt="HeadTec logo"/></a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-          
-                  <div class="collapse navbar-collapse" id="navbarsExample07">
-                    <ul class="navbar-nav mr-auto">
-                      <li class="nav-item active">
-                        <a class="nav-link" href="/controle">Início <span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Movimentações</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown07">
-                          <a class="dropdown-item" href="/movimentacoes/entradas">Entradas</a>
-                          <a class="dropdown-item" href="/movimentacoes/saidas">Saídas</a>
-                          <a class="dropdown-item" href="/movimentacoes/contas">Contas a pagar</a>
-                        </div>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/relatorios">Relatórios</a>
-                      </li>
-                    </ul>
-                    <ul class="navbar-nav float-right">
-                      <li class="nav-item">
-                        <a class="nav-link form-inline my-2 my-md-0" href="/logout">Sair</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-        </header>
         <main role="main">
             {% block main %}
                 <div class="container marketing">

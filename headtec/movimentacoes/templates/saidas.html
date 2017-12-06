@@ -1,10 +1,28 @@
 {% extends 'base1.html' %}
 {% block main %}
-<div class="row featurette">
-        <div class="login">
-        <h1>Saidas</h1>
+<div class="container marketing">
+    <div class="jumbotron" id="home">
+        <div class="sombra">
+            <h1>Saídas</h1>
+        </div>
+        <hr class="my-4">
+        <p class="lead sombra">Valor da saída :</p>
+        <form class="form-inblock">
+              <label class="sr-only" for="valor">Valor da saída :</label>
+              <div class="input-group col-md-2">
+                <div class="input-group-addon">R$</div>
+                <input required type="text" class="form-control" id="Valor" placeholder="0,00"><br/>
+              </div>
+              <br/>
+              <p class="lead sombra">Descrição da saída :</p>
+              <div class="input-group col-md-8">
+                <input required type="text" class="form-control" id="motivo" placeholder="Digite aqui...">
+              </div>
+              <br/>
+              <button type="button" class="btn btn-primary my-2 my-sm-0">Registrar</button>
+        </form>
     </div>
-    </div>
+</div>
 {% endblock %}
 {% block footer %}
 {% endblock %}

@@ -8,6 +8,14 @@ from django.utils import timezone
 # Create your models here.
 
 class caixa_geral(models.Model):
+    id = models.AutoField(primary_key=True)
+    movimentacao_caixa = models.ForeignKey('movimentacao')
+    saldo = models.DecimalField(max_digits=8, decimal_places=2)
+
+    def __str__(self):
+        return str(self.id)
+
+class movimentacao(models.Model) :
     TIPO = (
         ('E', 'Entrada'),
         ('S', 'Saida'),
