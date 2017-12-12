@@ -7,24 +7,25 @@
         </div>
         <hr class="my-4">
         <p class="lead sombra">Valor da conta :</p>
-        <form class="form-inblock">
+        <form method="POST" class="form-inblock">
+            {% csrf_token %}
               <label class="sr-only" for="valor">Valor da saída :</label>
               <div class="input-group col-md-2">
                 <div class="input-group-addon">R$</div>
-                <input required type="text" class="form-control" id="Valor" placeholder="0,00"><br/>
+                <input required name="valor" type="text" class="form-control" id="Valor" placeholder="0,00"><br/>
               </div>
               <br/>
               <p class="lead sombra">Descrição da conta :</p>
               <div class="input-group col-md-8">
-                <input required type="text" class="form-control" id="motivo" placeholder="Digite aqui..."><br/>
+                <input required name="desc" type="text" class="form-control" id="motivo" placeholder="Digite aqui..."><br/>
               </div>
               <br/>
               <p class="lead sombra">Data do vencimento :</p>
               <div class="input-group col-md-3">
-                <input required type="date" class="form-control" id="motivo" placeholder="Digite aqui..."><br/>
+                <input required name="data" type="date" class="form-control" id="motivo" placeholder="Digite aqui..."><br/>
               </div>
               <br/>
-              <button type="button" class="btn btn-primary my-2 my-sm-0">Registrar</button>
+              <button type="submit" class="btn btn-primary my-2 my-sm-0">Registrar</button>
         </form>
     </div>
 </div>

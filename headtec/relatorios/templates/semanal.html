@@ -1,0 +1,65 @@
+{% extends 'base1.html' %}
+{% block main %}
+<div class="container marketing">
+    <div class="jumbotron" id="home">
+        <div class="sombra">
+            <h1>Semanal</h1>
+        </div>
+        <hr class="featurette-divider">
+        <br/>
+        <div class="sombra">
+            <h4>De: {{one_week_ago|date:'d-m-Y'}} até {{hoje|date:'d-m-Y'}}.</h4>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row">
+                <table class="table">
+                        <thead>
+                            <tr class="sombra">
+                                <th>ID</th>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                            {% for movimentacao_caixa in mov %}
+                                {% if movimentacao_caixa.movimentacao_caixa.tipo == 'E' %}
+                                <tr class="entrada">
+                                    <td>{{movimentacao_caixa}}</td>
+                                    <td>{{movimentacao_caixa.movimentacao_caixa.data|date:'d-m-Y'}}</td>
+                                    <td>{{movimentacao_caixa.movimentacao_caixa.tipo}}</td>
+                                    <td>{{movimentacao_caixa.movimentacao_caixa.desc}}</td>
+                                    <td> R$ {{movimentacao_caixa.movimentacao_caixa.total}}</td>
+                                </tr>
+                                {% elif movimentacao_caixa.movimentacao_caixa.tipo == 'S' %}
+                                <tr class="saida">
+                                    <td>{{movimentacao_caixa}}</td>
+                                    <td>{{movimentacao_caixa.movimentacao_caixa.data|date:'d-m-Y'}}</td>
+                                    <td>{{movimentacao_caixa.movimentacao_caixa.tipo}}</td>
+                                    <td>{{movimentacao_caixa.movimentacao_caixa.desc}}</td>
+                                    <td> R$ {{movimentacao_caixa.movimentacao_caixa.total}}</td>
+                                </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row justify-content-end">
+                <div class="sombra">
+                    <h4>Saldo total: </h4>
+                </div>
+                {% if saldo_atualizado.saldo >= 0 %}
+                    <div class="entrada">
+                        <h4>R$ {{saldo_atualizado.saldo}}</h4>
+                    </div>
+                {% else %}
+                    <div class="saida">
+                        <h4>R$ {{saldo_atualizado.saldo}}</h4>
+                    </div>
+                {% endif %}
+            </div>
+    </div>
+</div>
+{% endblock %}

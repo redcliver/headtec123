@@ -131,6 +131,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/controle/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+LOGIN_REDIRECT_URL = '/controle/'

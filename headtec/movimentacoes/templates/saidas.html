@@ -3,23 +3,24 @@
 <div class="container marketing">
     <div class="jumbotron" id="home">
         <div class="sombra">
-            <h1>Saídas</h1>
+            <h1>Saidas</h1>
         </div>
         <hr class="my-4">
-        <p class="lead sombra">Valor da saída :</p>
-        <form class="form-inblock">
-              <label class="sr-only" for="valor">Valor da saída :</label>
+        <p class="lead sombra">Valor da saida :</p>
+        <form method="POST" class="form-inblock">
+                {% csrf_token %}
+              <label class="sr-only" for="valor">Valor da saida :</label>
               <div class="input-group col-md-2">
                 <div class="input-group-addon">R$</div>
-                <input required type="text" class="form-control" id="Valor" placeholder="0,00"><br/>
+                <input required name="valor" type="text" class="form-control" id="Valor" placeholder="0,00"><br/>
               </div>
               <br/>
-              <p class="lead sombra">Descrição da saída :</p>
+              <p class="lead sombra">Descrição da saida :</p>
               <div class="input-group col-md-8">
-                <input required type="text" class="form-control" id="motivo" placeholder="Digite aqui...">
+                <input required name="desc" type="text" class="form-control" id="motivo" placeholder="Digite aqui...">
               </div>
               <br/>
-              <button type="button" class="btn btn-primary my-2 my-sm-0">Registrar</button>
+              <button type="submit" class="btn btn-primary my-2 my-sm-0">Registrar</button>
         </form>
     </div>
 </div>

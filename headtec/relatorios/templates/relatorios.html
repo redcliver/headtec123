@@ -1,10 +1,16 @@
 {% extends 'base1.html' %}
 {% block main %}
-<div class="row featurette">
-        <div class="login">
-        <h1>Relatorios</h1>
+<div class="container marketing">
+    <div class="jumbotron" id="home">
+        <div class="sombra">
+            <h1>Relatórios</h1>
+        </div>
+        <hr class="featurette-divider">
+        <br/>
+        <a href="semanal"><button class="btn btn-space"><img src="../../static/app/img/semanal.png"/ ><br/>Semanal</button></a>
+        <a href="mensal"><button class="btn btn-space"><img src="../../static/app/img/mensal.png"/ ><br/>Mensal</button></a>
+        <a href="anual"><button class="btn btn-space"><img src="../../static/app/img/anual.png"/ ><br/>Anual</button></a>
+        <a href="contas"><button class="btn btn-space"><img src="../../static/app/img/bills.png"/ ><br/>Contas</button></a>
     </div>
-    </div>
-{% endblock %}
-{% block footer %}
+</div>
 {% endblock %}
