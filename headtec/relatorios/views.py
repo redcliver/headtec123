@@ -34,7 +34,11 @@ def mensal(request):
 
 def anual(request):
     if request.user.is_authenticated():
-        return render(request, 'anual.html', {'title':'Anual'})
+        hoje = datetime.today()
+        one_year_ago = hoje - timedelta(days=365)
+        mov = caixa_geral.objects.filter(movimentacao_caixa__data__lte=hoje, movimentacao_caixa__data__gt=one_year_ago)
+        saldo_atualizado = caixa_geral.objects.latest('id')
+        return render(request, 'anual.html', {'title':'Anual', 'mov':mov, 'hoje':hoje, 'one_year_ago':one_year_ago, 'saldo_atualizado':saldo_atualizado})
     else:
         return render(request, 'erro.html', {'title':'Erro'})
 
